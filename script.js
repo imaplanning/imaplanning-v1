@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     // --- CONFIGURACIÓN ---
-    const BACKEND_URL = '[PEGA AQUÍ TU URL DE CLOUD RUN]/chat';
+    const BACKEND_URL = 'https://imaplanning-v1-43541563769.northamerica-south1.run.app/chat';
     const CALENDLY_URL = 'https://calendly.com/imaplanning';
 
     // --- ELEMENTOS DEL DOM ---
@@ -112,4 +112,5 @@ function removeTypingIndicator() {
     const chatWindow = document.getElementById('chat-window');
     const typingElement = document.getElementById('typing-indicator');
     if (typingElement) chatWindow.removeChild(typingElement);
+
 }
