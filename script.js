@@ -6,13 +6,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const splashText = document.getElementById('splash-text');
 
     if (splashScreen) {
-        // Secuencia de la animación
         setTimeout(() => {
             if(splashLogo) splashLogo.style.opacity = '0';
-
             setTimeout(() => {
                 if(splashText) splashText.style.opacity = '1';
-
                 setTimeout(() => {
                     splashScreen.classList.add('fade-out');
                 }, 2500); 
@@ -37,7 +34,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeModalButton = document.querySelector('.close-button');
     const privacyCheckbox = document.getElementById('privacy-check');
     
-    // --- HISTORIAL DE CONVERSACIÓN ---
     let conversationHistory = [];
 
     // --- LÓGICA DE CONSENTIMIENTO Y ARRANQUE ---
@@ -98,7 +94,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const name = document.getElementById('contact-name').value;
             const email = document.getElementById('contact-email').value;
             if(name && email) {
-                // Aquí se enviarían los datos a Google Sheets
                 console.log(`Lead capturado: Nombre=${name}, Email=${email}`);
                 if(contactFormContainer) contactFormContainer.innerHTML = `<p>¡Gracias! Tus datos han sido guardados. Ahora puedes agendar tu sesión.</p><a href="${CALENDLY_URL}" target="_blank" class="calendly-button">Agendar Ahora</a>`;
             }
