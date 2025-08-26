@@ -1,24 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-
-    // --- LÓGICA DEL SPLASH SCREEN ---
-    const splashScreen = document.getElementById('splash-screen');
-    const splashLogo = document.getElementById('splash-logo');
-    const splashText = document.getElementById('splash-text');
-
-    if (splashScreen) {
-        setTimeout(() => {
-            if(splashLogo) splashLogo.style.opacity = '0';
-            setTimeout(() => {
-                if(splashText) splashText.style.opacity = '1';
-                setTimeout(() => {
-                    splashScreen.classList.add('fade-out');
-                }, 2500); 
-            }, 500);
-        }, 1500);
-    }
-    
     // --- CONFIGURACIÓN ---
-    const BACKEND_URL = '[PEGA AQUÍ TU URL DE CLOUD RUN]/chat';
+    const BACKEND_URL = 'https://imaplanning-v1-43541563769.northamerica-south1.run.app/chat';
     const CALENDLY_URL = 'https://calendly.com/imaplanning';
 
     // --- ELEMENTOS DEL DOM ---
