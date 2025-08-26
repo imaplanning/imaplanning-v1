@@ -1,4 +1,23 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener(// --- LÓGICA DEL SPLASH SCREEN ---
+const splashScreen = document.getElementById('splash-screen');
+const splashLogo = document.getElementById('splash-logo');
+const splashText = document.getElementById('splash-text');
+
+// Secuencia de la animación
+setTimeout(() => {
+    // 1. Después de 1.5 segundos, se oculta el logo
+    splashLogo.style.opacity = '0';
+
+    setTimeout(() => {
+        // 2. Medio segundo después, aparece el texto
+        splashText.style.opacity = '1';
+
+        setTimeout(() => {
+            // 3. Después de 2.5 segundos, se oculta toda la pantalla de bienvenida
+            splashScreen.classList.add('fade-out');
+        }, 2500); 
+    }, 500);
+}, 1500);
     // --- CONFIGURACIÓN ---
     const BACKEND_URL = 'https://imaplanning-v1-43541563769.northamerica-south1.run/chat';
     const CALENDLY_URL = 'https://calendly.com/imaplanning';
@@ -114,4 +133,5 @@ function removeTypingIndicator() {
     if (typingElement) chatWindow.removeChild(typingElement);
 
 }
+
 
