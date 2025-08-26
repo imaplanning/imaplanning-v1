@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     // --- CONFIGURACIÓN ---
-    const BACKEND_URL = 'https://imaplanning-v1-43541563769.northamerica-south1.run.app/chat';
+    const BACKEND_URL = 'https://imaplanning-v1-43541563769.northamerica-south1.run/chat';
     const CALENDLY_URL = 'https://calendly.com/imaplanning';
 
     // --- ELEMENTOS DEL DOM ---
@@ -114,3 +114,4 @@ function removeTypingIndicator() {
     if (typingElement) chatWindow.removeChild(typingElement);
 
 }
+
