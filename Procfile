@@ -1,1 +1,0 @@
-web: gunicorn --workers=1 --threads=80 --timeout=0 main:app
