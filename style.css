@@ -1,82 +1,41 @@
 /* === CONFIGURACIÓN GENERAL === */
 body { font-family: 'Roboto', sans-serif; background-color: #f4f7f9; color: #333; margin: 0; }
+
+/* === ESTILOS PARA EL SPLASH SCREEN === */
+#splash-screen { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #0d2c4e; display: flex; justify-content: center; align-items: center; flex-direction: column; z-index: 2000; opacity: 1; transition: opacity 0.8s ease-in-out, visibility 0.8s; }
+#splash-screen.fade-out { opacity: 0; visibility: hidden; }
+#splash-logo { height: 80px; opacity: 1; transition: opacity 0.5s ease-in-out; }
+#splash-text { color: white; text-align: center; opacity: 0; transition: opacity 0.8s ease-in-out; position: absolute; }
+#splash-text h1 { font-size: 1.5em; font-weight: 400; margin-bottom: 15px; }
+#splash-text h2 { font-size: 2em; font-weight: 700; }
+
 /* === ENCABEZADO === */
 .app-header { background-color: #ffffff; padding: 10px 25px; border-bottom: 1px solid #e0e0e0; display: flex; align-items: center; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
 .logo { height: 45px; margin-right: 15px; }
 .app-header h1 { font-size: 1.3em; margin: 0; color: #0d2c4e; font-weight: 400; }
-/* === CHAT Y FORMULARIO DE CONTACTO === */
+
+/* === CHAT Y OTROS === */
 .chat-container { display: flex; flex-direction: column; max-width: 800px; width: 100%; height: calc(100vh - 71px - 61px); margin: 0 auto; background-color: #ffffff; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
 .chat-window { flex-grow: 1; padding: 20px; overflow-y: auto; display: flex; flex-direction: column; gap: 15px;  }
 .message { padding: 10px 15px; border-radius: 18px; max-width: 80%; line-height: 1.6; word-wrap: break-word; }
 .ai-message { background-color: #e9f2ff; color: #0d2c4e; align-self: flex-start; border-bottom-left-radius: 4px; }
 .user-message { background-color: #0d2c4e; color: #ffffff; align-self: flex-end; border-bottom-right-radius: 4px; }
 #contact-form-container { padding: 20px; text-align: center; background-color: #f9fafb; border-top: 1px solid #e0e0e0; }
-#contact-form-container h4 { margin-top: 0; }
-#contact-form-container .contact-input { width: calc(80% - 30px); margin-bottom: 10px; padding: 10px 15px; border-radius: 5px; border: 1px solid #ccc; font-size: 1em; }
-#submit-contact-button, .calendly-button { background-color: #0091AD; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; text-decoration: none; display: inline-block; font-size: 1em; }
 .chat-input-area { display: flex; flex-direction: column; padding: 15px; border-top: 1px solid #e0e0e0; background-color: #f9fafb; }
 .privacy-consent { font-size: 0.8em; text-align: center; margin-bottom: 10px; color: #555; }
 .privacy-consent a { color: #007bff; }
 .chat-input-row { display: flex; }
 #user-input { flex-grow: 1; border: 1px solid #ccc; border-radius: 20px; padding: 10px 15px; font-size: 1em; }
-#user-input:disabled { background-color: #f0f0f0; cursor: not-allowed; }
-#send-button { background-color: #0d2c4e; color: white; border: none; border-radius: 20px; padding: 10px 20px; margin-left: 10px; cursor: pointer; font-size: 1em; font-weight: bold; }
-#send-button:disabled { background-color: #ccc; cursor: not-allowed; }
-#typing-indicator p { display: flex; align-items: center; padding: 5px 0; }
+#user-input:disabled { background-color: #f0f0f0; }
+#send-button { background-color: #0d2c4e; color: white; border: none; border-radius: 20px; padding: 10px 20px; margin-left: 10px; cursor: pointer; }
+#send-button:disabled { background-color: #ccc; }
+#typing-indicator p { display: flex; align-items: center; }
 .dot { width: 8px; height: 8px; margin: 0 2px; background-color: #0d2c4e; border-radius: 50%; animation: bounce 1.4s infinite ease-in-out both; }
 .dot:nth-child(2) { animation-delay: -0.16s; }
 .dot:nth-child(3) { animation-delay: -0.32s; }
 @keyframes bounce { 0%, 80%, 100% { transform: scale(0); } 40% { transform: scale(1.0); } }
-/* === MODAL DE PRIVACIDAD Y FOOTER === */
-.modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.5); }
-.modal-content { background-color: #fefefe; margin: 10% auto; padding: 20px 30px; border: 1px solid #888; width: 80%; max-width: 600px; border-radius: 8px; position: relative; }
-.close-button { color: #aaa; position: absolute; top: 10px; right: 20px; font-size: 28px; font-weight: bold; cursor: pointer; }
+.modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); }
+.modal-content { background-color: #fefefe; margin: 10% auto; padding: 20px; width: 80%; max-width: 600px; border-radius: 8px; }
+.close-button { color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer; }
 .app-footer { background-color: #0d2c4e; color: #f4f7f9; text-align: center; padding: 20px; }
-
 .app-footer a { color: white; text-decoration: none; margin: 0 5px; }
-/* === ESTILOS PARA EL SPLASH SCREEN === */
-#splash-screen {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #0d2c4e; /* Azul oscuro de fondo */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    z-index: 2000; /* Se asegura de que esté por encima de todo */
-    opacity: 1;
-    transition: opacity 0.8s ease-in-out, visibility 0.8s;
-}
-
-#splash-screen.fade-out {
-    opacity: 0;
-    visibility: hidden; /* La oculta después de la transición */
-}
-
-#splash-logo {
-    height: 80px; /* Un tamaño de logo más prominente */
-    opacity: 1;
-    transition: opacity 0.5s ease-in-out;
-}
-
-#splash-text {
-    color: white;
-    text-align: center;
-    opacity: 0; /* Empieza oculto */
-    transition: opacity 0.8s ease-in-out;
-    position: absolute; /* Permite que aparezca en el mismo lugar que el logo */
-}
-
-#splash-text h1 {
-    font-size: 1.5em;
-    font-weight: 400;
-    margin-bottom: 15px;
-}
-
-#splash-text h2 {
-    font-size: 2em;
-    font-weight: 700;
-}
